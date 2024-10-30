@@ -4,7 +4,7 @@ import { userType } from "types/user.type";
 
 type leaderType = {
   date: string;
-  pointAwarded: number;
+  pointsAwarded: number;
 };
 export function LeaderBoard() {
   const token = localStorage.getItem("token");
@@ -57,6 +57,7 @@ export function LeaderBoard() {
       console.log(error);
     }
   };
+  console.log(userHistory);
 
   return (
     <>
@@ -94,7 +95,7 @@ export function LeaderBoard() {
                   userHistory?.map((history) => (
                     <div className="  border-b-2 p-2 m-2">
                       <p>Date : {history?.date}</p>
-                      <p>Point Awarded:{history?.pointAwarded}</p>
+                      <p>Point Awarded:{history?.pointsAwarded}</p>
                     </div>
                   ))}
               </div>
